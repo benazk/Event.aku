@@ -1,0 +1,101 @@
+<?php
+// Establecer la conexión a la base de datos (reemplaza los valores con los de tu configuración)
+$servername = "mysql-8001.dinaserver.com";
+$username = "BIJYadmin";
+$password = "uYpZ4w52);.3";
+$database = "event.aku";
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Obtener el id más alto de la tabla usuarios
+$result = $conn->query("SELECT MAX(id) as max_id FROM usuarios");
+$row = $result->fetch_assoc();
+$maxId = $row['max_id'];
+?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styleform_patroc.css">
+    <link rel="icon" type="image/x-icon" href="../images/logo.png">
+    <title>Event.aku</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1 id="titulo">Event.aku</h1>
+        <img class="logo" src="../images/logo.png">
+        <img class="logo1" src="../images/logo.png">
+    </div>
+
+    <div class="menu">
+        <div class="sitios"><b><a href="../index.html" style="text-decoration:none">Portada</a></b></div>
+        <div class="eventos"><b><a href="event.html" style="text-decoration:none"> Eventos</a></b></div>
+        <div class="sitios"><b><a href="sitios.html" style="text-decoration:none">Sitios</a></b></div>
+        <div class="patrocinadores"><b><a href="patrocinadores.html" style="text-decoration:none"> Patrocinadores </a></b></div>
+        <div class="nosotros"><b> <a href="aboutus.html" style="text-decoration:none">Nosotros</a></b></div>
+    </div>
+<div class="main3">
+    
+        <form action="https://ivatbean.eus/insert.php" method="get" class="login">
+            <h1 style="color: black; margin-right: 100px;">Elige Evento:</h1>
+            <input type="hidden" name="db" id="db" value ="event.aku">
+            <input type="hidden" name="table" id="table" value ="estan">
+            <input type="hidden" name="id_usuarios" value= <?php echo $maxId; ?>>
+            <div class="select1" style="position: relative; right: 60px;">
+                <select class="id_eventos" id="id_eventos" name="id_eventos">
+                  <option value="">Elige tu evento</option>
+                  <option value="18">BARCELONA: Negocio Demoniaco</option>
+                  <option value="22">BARCELONA: Conferencia de Alta Gastronomía de la Oscuridad</option>
+                  <option value="23">BARCELONA: Manga Barcelona</option>
+                  <option value="24">BARCELONA: El magnetismo entre los usuarios de Stand</option>
+                  <option value="20">MADRID: Concurso de Elección de Píldoras</option>
+                  <option value="16">MADRID: Conferencia de intercambio de astrología</option>
+                  <option value="15">MADRID: Las Tres Mil Formas de Destruir el Mundo</option>
+                  <option value="19">MADRID: TokiToki Aru</option>
+                  <option value="6">VALENCIA: Japan Weekend Valencia</option>
+                  <option value="12">VALENCIA: Programa de Experimentación en Nuevas Tecnologías de Tercera Generación</option>
+                  <option value="13">VALENCIA: La Batalla Épica por el Título del Mejor Ninja del Mundo</option>
+                  <option value="14">VALENCIA: La Conferencia de Intercambio de Conocimientos Extrañadidos y Raritos</option>
+                  <option value="25">DONOSTI: Batalla Épica de Líderes Sectarios</option>
+                  <option value="4">DONOSTI: Super Comicon</option>
+                  <option value="17">DONOSTI: Conferencia de Viajeros del Tiempo del Futuro</option>
+                  <option value="21">DONOSTI: Tercer Torneo Mundial de Dominación Global de Cthulhu</option>
+                </select></div>
+            <input type="submit" name="submit" id="submit" value="entrar"><br>
+          
+            
+        </form>
+      
+ </div>
+
+
+ <footer class="footer">
+    <div class="help"><b>Registración: </b>
+        <p> Si quieres registrarte y comprar las entradas solo tienes que rellenar el formulario de inscripción. 
+    </div>
+    <div class="law"><b>Copyright:</b>
+        <p>Copyright (c) 2023 Company Event.aku
+            All Rights Reserved.
+
+            This product is protected by copyright and distributed under
+            licenses restricting copying, distribution, and decompilation.
+    </div>
+
+    <div class="visitanos"><b>Visitanos/Siguenos:</b>
+        <p>
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <a href="https://www.facebook.com/?locale=es_ES" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/?lang=es" class="fa fa-twitter"></a>
+            <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+            <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+    </div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styleform_patroc.css">
+    <link rel="icon" type="image/x-icon" href="../images/logo.png">
+    <title>Event.aku</title>
+</head>
+
+<body>
+    <button id="bottom" onclick="location.href='../index.html'">
+        <img src="../images/atras.png" alt="atras" height="20px" width="20px">
+    </button>
+    <h1 style="text-align: center; color: black;">AÑADIR EVENTOS</h1>
+    <form action="http://ivatbean.eus/insert.php" style="position: relative; left: 530px; top: 30px;">
+
+        <input type="hidden" name="db" id="db" value="event.aku">
+        <input type="hidden" name="table" id="table" value="eventos">
+        <input type="text" name="tema" id="" value=" ">
+        <label for="tema">tema</label>
+        <br><br>
+        <input type="text" name="nombre" id="">
+        <label for="nombre">nombre</label>
+        <br><br>
+        <input type="time" name="hora" id="">
+        <label for="hora">hora</label>
+        <br><br>
+        <input type="text" name="aforo" id="">
+        <label for="aforo">aforo</label>
+        <br><br>
+        <input type="date" name="fecha" id="">
+        <label for="fecha">fecha</label>
+        <br><br>
+        <input type="text" name="edad_min" id="">
+        <label for="edad_min">edad minima</label>
+        <br><br>
+        <input type="text" name="descripcion" id="">
+        <label for="descripcion">descripcion</label>
+        <br><br>
+        <input type="text" name="lugar" id="">
+        <label for="lugar">lugar</label>
+        <br><br>
+        <input type="text" name="Precio" id="">
+        <label for="Precio">precio</label>
+        <br><br>
+        <input type="number" name="id_patrocinadores" id="">
+        <label for="id_patrocinadores">patrocinador</label>
+        <br><br>
+        <input type="submit" name="" id="">
+    </form>
+
+</body>
+
+</html>
